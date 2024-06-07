@@ -83,6 +83,7 @@ class Order_mgt_UI:
                 if more not in ['Y', 'y','N','n']:
                      print("You did not enter Y or N. Please try again")
                      correct_more=False
+                
             if more in ['Y','y']:
                  done=False
         return a_postal_order

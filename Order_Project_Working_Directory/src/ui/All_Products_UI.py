@@ -8,13 +8,20 @@ class All_Products_UI:
     #appends a new product to the products.txt file
     def input_a_product(self):
         name = input("Enter name of a product: ")
-        unit_price=float(input("Enter the unit price: "))
+        InputValid = False
+        while InputValid == False:
+            try:
+                unit_price=float(input("Enter the unit price: "))
+                InputValid = True
+            except Exception as x:
+                print("Wrong input type shit")
+
         stock_count = int(input("Enter the stock count: "))
         p = Product_DB(name,unit_price,stock_count)
         self.all_products_db.save_new_product(p)
             
     '''
-    def update_a_product(self)->bool:
+    def update_a_product(self)->bool:74
         is_updated=False
         if len(self.all_products_db.all_products)>0:
             print("The following products exist: ")
